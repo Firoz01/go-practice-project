@@ -1,8 +1,7 @@
-CREATE TABLE IF NOT EXISTS "users" (
+CREATE TABLE IF NOT EXISTS "employee" (
   "id" SERIAL PRIMARY KEY,
-  "name" VARCHAR (64) NOT NULL,
-  "password" VARCHAR(64) NOT NULL,
+  "name" VARCHAR NOT NULL,
+  "salary" INT,
   "created_at" timestamp NOT NULL DEFAULT (now()),
   "updated_at" timestamp NOT NULL DEFAULT (now())
 );
-

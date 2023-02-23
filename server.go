@@ -11,8 +11,9 @@ import (
 func main() {
 
 	e := echo.New()
+
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
+		return c.String(http.StatusAccepted, "Hello, World!")
 	})
 
 	e.GET("/users/:id", getUser)
@@ -22,6 +23,10 @@ func main() {
 	e.GET("/database", insertDatabase)
 
 	e.GET("/get-data", selectFromDatabase)
+
+	e.POST("/insert-employee", employeeInsert)
+
+	e.GET("/show-employee", showEmployee)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
